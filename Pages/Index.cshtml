@@ -8,3 +8,66 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<h4>Index</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Test[0].clmnid)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Test[0].clmn2)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Test[0].clmn3)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Test[0].clmn4)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(var item in Model.Test)
+  {
+    <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.clmnid)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.clmn2)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.clmn3)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.clmn4)
+        </td>
+    </tr>
+  }
+  </tbody>
+</table>
+<!--<div>
+  <button onclick="Create_OnClick">Create </button>
+</div>
+
+<div>
+  <button onclick=Create_OnClick() >Create</button>
+</div>
+-->
+<div>
+  <Form method="Post">
+    <input type="submit" value="Create"/>
+    <a asp-page="./Index"></a>
+  </Form>
+</div>
+<div>
+    <button onclick="Create_OnClick()" type="submit">TryMe</button>
+</div>
+
+<div>
+  <Form method="Delete">
+    <input type="submit" value="Clear List"/>
+    <a asp-page="./Index"></a>
+  </Form>
+</div>
